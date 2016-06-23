@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<div class="row">
+  <p class="title">
+    &nbsp;
+  </p>
+  <div class="title-content">
+    &#9679;<time>&#8201;02 December, 2016</time>
+    <address>
+      Melbourne Meat Market<br>
+      5 Blackwood Street, North Melbourne
+    </address>
+  </div>
+</div>
+
+<div class="row">
+  <p class="title">
+    The day
+  </p>
+  <div class="title-content">
+    <p>
+      Decompress is a community day for designers and developers run by the CSSConf and JSConf team. Our focus is squarely set on creating an all-inclusive space for attendees to learn, share and create. Topics covered are a blend of CSSConf and JSConf, and will even feature some of the same speakers.
+    </p>
+  </div>
+</div>
+
+{% include tickets.html %}
+
+{% if site.posts.any? %}
+  <div class="row">
+    <p class="title">
+      News
+    </p>
+    <div class="title-content">
+      <p>
+        {% for post in site.posts %}
+          <a href="{{ post.url | prepend: site.github.url }}" class="list">
+            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">&#8201;{{ post.date | date: "%b %d" }}</time>
+            <span>{{ post.title }}</span>
+          </a>
+        {% endfor %}
+      </p>
+    </div>
+  </div>
+{% endif %}
+
+{% include mailing-list.html %}
+
+<div class="row">
+  <p class="title">
+    Code of conduct
+  </p>
+  <div class="title-content">
+    <p>
+      All organisers, sponsors and attendees are required to follow the <a target="_blank" href="http://confcodeofconduct.com/">conference code of conduct</a>. We are committed to providing a harassment-free, professional & welcoming environment for all attendees.
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <p class="title">
+    Sponsors
+  </p>
+  <div class="title-content">
+    <p>
+      We’re looking for more people to help support this event.
+      If your organisation could help, please drop an email to <a href="{{ site.sponsors_email }}">{{ site.sponsors_email }}</a> for more details.
+    </p>
+  </div>
+</div>
+
+{% include team.html %}
