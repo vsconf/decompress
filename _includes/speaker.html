@@ -1,0 +1,17 @@
+<div class="speaker">
+  {% if speaker.interview %}
+    <a class="speaker__link" href="interviews/{{speaker.interview}}"></a>
+  {% endif %}
+  <div class="photo-wrapper">
+    <div class="padder"></div>
+    <div class="photo" style="background-image: url({{ '/assets/images/' | prepend: site.github.url | append: speaker.photo }});"></div>
+    <div class="photo-screen"></div>
+  </div>
+  <div class="details-wrapper">
+    <div class="padder"></div>
+    <div class="details">
+      <span class="name">{{ speaker.name }}<sup>{{ speaker.country }}</sup></span>
+      <p class="bio">{{ speaker.bio }}</p>
+    </div>
+  </div>
+</div>

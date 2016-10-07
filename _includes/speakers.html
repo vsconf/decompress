@@ -1,0 +1,8 @@
+<div class="speakers">
+  {% for speaker in site.speakers %}
+    {% if forloop.index == 1 %}
+      <div class="speaker empty"></div>
+    {% endif %}
+    {% include speaker.html %}
+  {% endfor %}
+</div>
