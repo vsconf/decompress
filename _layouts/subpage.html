@@ -2,22 +2,25 @@
 <html dir="ltr" lang="en">
 {% include head.html %}
 <body>
-  {% include header.html %}
+  {% include header.html classes="header--permanent" %}
   <div class="intro">
     <div class="logo">
       <a href="{{ '/' | prepend: site.github.url }}">
         {% include logo.svg %}
       </a>
     </div>
-    {% include speakers.html %}
     <div class="camo">
       {% include camo.svg %}
     </div>
   </div>
-  <div class="wrapper content-wrapper">
-    {{ content }}
+  <div class="outer">
+    <div class="bg bg--alt"></div>
+    <div class="wrapper content-wrapper-alt">
 
-    {% include footer.html %}
+      {{ content }}
+
+      {% include footer.html %}
+    </div>
   </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js" type="text/javascript" charset="utf-8"></script>
