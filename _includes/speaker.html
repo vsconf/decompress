@@ -10,12 +10,14 @@
   <div class="details-wrapper">
     <div class="padder"></div>
     <div class="details">
-      <span class="name">{{ speaker.name }}<sup>{{ speaker.country }}</sup></span>
+      <p class="name">{{ speaker.name }}<sup>{{ speaker.country }}</sup></p>
       <p class="bio">{{ speaker.bio }}</p>
-      {% if speaker.website %}
-        <p class="website"><a href="{{ speaker.website }}">(www)</a></p>
-      {% endif %}
-      <p class="twitter"><a href="http://twitter.com/{{ speaker.twitter }}">@{{speaker.twitter}}</a></p>
+      <p class="website">
+        <a href="http://twitter.com/{{ speaker.twitter }}">@{{speaker.twitter}}</a>
+        {% if speaker.website %}
+          <a href="{{ speaker.website }}">(www)</a>
+        {% endif %}
+      </p>
     </div>
   </div>
 </div>
