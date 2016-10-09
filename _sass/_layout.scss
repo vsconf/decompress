@@ -129,6 +129,7 @@
     }
 
     svg {
+      height: auto;
       max-width: 100%;
       path, text {
         fill: $primary;
