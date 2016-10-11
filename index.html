@@ -29,23 +29,21 @@ layout: default
 {% include workshops.html %}
 {% include tickets.html %}
 
-{% if site.posts.any? %}
-  <div class="row">
-    <p class="title">
-      News
+<div class="row">
+  <p class="title">
+    News
+  </p>
+  <div class="title-content">
+    <p>
+      {% for post in site.posts %}
+        <a href="{{ post.url | prepend: site.github.url }}" class="list">
+          <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">&#8201;{{ post.date | date: "%b %d" }}</time>
+          <span>{{ post.title }}</span>
+        </a>
+      {% endfor %}
     </p>
-    <div class="title-content">
-      <p>
-        {% for post in site.posts %}
-          <a href="{{ post.url | prepend: site.github.url }}" class="list">
-            <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">&#8201;{{ post.date | date: "%b %d" }}</time>
-            <span>{{ post.title }}</span>
-          </a>
-        {% endfor %}
-      </p>
-    </div>
   </div>
-{% endif %}
+</div>
 
 {% include mailing-list.html %}
 
