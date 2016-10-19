@@ -476,6 +476,13 @@ a.list {
   }
 }
 
+.sponsor--bigger {
+  padding: 0.75rem 0 0.5rem;
+  img {
+    max-height: 6.25rem;
+  }
+}
+
 .person {
   display: flex;
   border: 0;
