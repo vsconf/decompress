@@ -199,6 +199,13 @@
         }
       }
 
+      &:nth-child(11) {
+        .details-wrapper {
+          position: relative;
+          left: calc(100% * -1) !important;
+        }
+      }
+
       &:nth-child(12) {
         .details-wrapper {
           position: relative;
