@@ -195,14 +195,14 @@
       &:nth-child(10) {
         .details-wrapper {
           position: relative;
-          left: calc(100% * -1) !important;
+          left: calc(100% * -1);
         }
       }
 
       &:nth-child(11) {
         .details-wrapper {
           position: relative;
-          left: calc(100% * -1) !important;
+          left: calc(100% * -1);
         }
       }
 
@@ -235,29 +235,27 @@
       }
 
       &:hover {
-        z-index: 100;
 
-        .photo-wrapper {
-          mix-blend-mode: multiply;
-        }
+        @media (min-width: 701px) {
 
-        .photo-wrapper .photo-screen {
-          display: block;
-        }
+          z-index: 100;
 
-        .details-wrapper {
-          opacity: 1;
-          z-index: 50;
-        }
+          .photo-wrapper {
+            mix-blend-mode: multiply;
+          }
 
-        @media (max-width: 1260px) {
-          .bio {
-            display: none;
+          .photo-wrapper .photo-screen {
+            display: block;
+          }
+
+          .details-wrapper {
+            opacity: 1;
+            z-index: 50;
           }
         }
       }
 
-      @media (max-width: 900px) {
+      @media (max-width: 900px) and (min-width: 701px) {
         flex: 0 0 calc(100% / 2);
 
         &:nth-child(n) {
@@ -285,18 +283,24 @@
       }
 
       @media (max-width: 700px) {
-        flex: 0 0 calc(100% / 2);
+        flex: 0 0 100%;
 
-        &:nth-child(n) {
+        &:nth-child(even) {
+          left: 50%;
+          .details-wrapper {
+            left: -100%;
+          }
+        }
+
+        &:nth-child(odd) {
           left: 0;
+          .details-wrapper {
+            left: 0;
+          }
         }
 
         &.empty {
-          display: block;
-        }
-
-        .photo-wrapper {
-          flex: 0 0 100%;
+          display: none;
         }
       }
 
@@ -337,7 +341,9 @@
       .details-wrapper {
         position: relative;
         background-color: #FFF;
-        opacity: 0;
+        @media (min-width: 701px) {
+          opacity: 0;
+        }
         z-index: 10;
 
         .padder {
@@ -360,6 +366,9 @@
           }
           @media (max-width: 1400px) {
             font-size: 1.3rem;
+          }
+          @media (max-width: 700px) {
+            font-size: 1.1rem;
           }
           p {
             margin: 0 0 0.5rem;
