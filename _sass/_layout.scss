@@ -213,6 +213,20 @@
         }
       }
 
+      &:nth-child(16) {
+        .details-wrapper {
+          position: relative;
+          left: calc(100% * -1);
+        }
+      }
+
+      &:nth-child(17) {
+        .details-wrapper {
+          position: relative;
+          left: calc(100% * -1);
+        }
+      }
+
       &:nth-child(18) {
         .details-wrapper {
           position: relative;
