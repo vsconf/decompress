@@ -485,6 +485,12 @@ a.list {
   &--simple time:before {
     display: none;
   }
+  &--past {
+	  time,
+	  span {
+		  	opacity: .5;
+	  }
+  }
   time {
     color: black;
     display: inline-block;
